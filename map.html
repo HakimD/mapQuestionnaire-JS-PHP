@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Map</title>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+
+<script type="text/javascript" src="qcmDynamique.js"></script>
+
+<style>
+.ui-widget-content { width: 100px; height: 80px; padding: 0.5em; float: left; margin: 5px 5px 5px 0; }
+#map { height: 400px; width:700px; float:right}
+
+
+</style>
+
+</head>
+<body>
+	<div id="consigne">
+	<p>3 niveaux disponibles
+	<ul>
+		<li>Niveau 1 : 5 questions, vous devez avoir au minimum 3 bonnes réponses pour passer au niveau supérieur</li>
+		<li>Niveau 2 : 10 questions, vous devez avoir au minimum 7 bonnes réponses pour passer au niveau supérieur</li>
+		<li>Niveau 3 : 15 questions, vous devez avoir au minimum 12 bonnes réponses pour terminer le jeu</li><br>
+		<li>D&eacute;placer le pays voulu sur la carte pour répondre à la question</li>
+	</ul>
+
+	</p>
+</div>
+	 <div id="map"></div>
+  <div id = "questions"> </div>
+  <div id="info"></div>
+	<div id ="nbQ"></div>
+	<div id = "resultat"></div>
+	<div id="suivant"></div>
+	<div id ="niveau"></div>
+	<div id ="temps"></div>
+
+
+</body>
+</html>

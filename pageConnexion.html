@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <title>Un formulaire de connexion en AJAX</title>
+</head>
+
+<body>
+
+    <h1>Un formulaire de connexion en AJAX</h1>
+
+    <form method="post">
+    <p>
+        Nom d'utilisateur : <input type="text" id="username" />
+        Mot de passe : <input type="password" id="password" />
+        <input type="submit" id="submit" value="Se connecter !" />
+    </p>
+    </form>
+
+    <div id="resultat">
+    <!-- Nous allons afficher un retour en jQuery au visiteur -->
+    </div>
+
+    <script>
+
+        $(document).ready(function(){
+            $("#submit").click(function(e){
+                $.post(
+                    'connexion.php',
+                    {
+                        login : $("#username").val(),
+                        password : $("#password").val()
+
+                    },
+
+                    function(data){
+
+                        if(data == "ok"){
+                             //Le membre est connecté. Ajoutons lui un message dans la page HTML.
+                             $("#resultat").html("<p>Vous avez été connecté avec succès !</p>");
+                        }
+
+                        else{
+                             // Le membre n'a pas été connecté. (data vaut ici "failed")
+                             $("#resultat").html("<p>Erreur lors de la connexion...</p>");
+                        }
+                    },
+                    'text'
+                );
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
